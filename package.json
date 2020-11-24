@@ -1,0 +1,9 @@
+{
+  "name": "caidensanders.com",
+  "description": "Caiden Sanders's Portfolio Website",
+  "author": "Caiden Sanders",
+  "version": "0.0.0",
+  "repository": "https://github.com/caidenvsanders/caidensanders.com",
+  "license": "MIT",
+  "private": true
+}
