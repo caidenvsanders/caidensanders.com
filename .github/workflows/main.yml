@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
         
       - name: Install Dependencies (from network)
-        run: yarn --cwd packages/web-frontend install --frozen-lockfile
+        run: yarn --cwd packages/web-frontend install --check-files
 
       - name: Test using Node.js
         uses: actions/setup-node@v1
