@@ -26,7 +26,7 @@ The website is kept up to date with the current production build at https://caid
 
 The main purpose of this repository is for me, Caiden Sanders, to manage my code for my portfolio website, https://caidensanders.com, but if anyone wants to contribute, contributing is always welcome.
 
-### [Code of Conduct](https://code.fb.com/codeofconduct)
+### [Code of Conduct](https://github.com/caidenvsanders/caidensanders.com/blob/main/CODE_OF_CONDUCT.md)
 
 Here is the code of conduct that project participants are expected to adhere to. Please read [the full text](https://github.com/caidenvsanders/caidensanders.com/blob/main/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
