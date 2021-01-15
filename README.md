@@ -7,16 +7,16 @@ caidensanders.com is my, Caiden Sanders', website development portfolio.
 caidensanders.com has two different packages to build, the API and the WebFrontend.
 These commands are to be executed in the root directory: caidensanders.com.
 
-* For the API: yarn APIBuildCI
-* For the WebFrontend: yarn WebFrontendBuildCI
+* For the API: ```yarn APIBuildCI```
+* For the WebFrontend: ```yarn WebFrontendBuildCI```
 
 ## Testing
 
 caidensanders.com also has two different packages to test, the API and the WebFrontend.
 These commands are also meant to be executed in the root directory: caidensanders.com.
 
-* For the API: yarn APITestCI
-* For the WebFrontend: yarn WebFrontendTestCI
+* For the API: ```yarn APITestCI```
+* For the WebFrontend: ```yarn WebFrontendTestCI```
 
 ## Production
 
