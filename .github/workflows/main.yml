@@ -35,12 +35,12 @@ jobs:
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: |
           yarn policies set-version
-          yarn install --frozen-lockfile --ignore-optional
+          yarn install --cwd packages/web-frontend --frozen-lockfile --ignore-optional
       - name: Install Dependencies (from cache)
         if: steps.cache-deps.outputs.cache-hit == 'true'
         run: |
           yarn policies set-version
-          yarn install --frozen-lockfile --ignore-optional --offline
+          yarn install --cwd packages/web-frontend --frozen-lockfile --ignore-optional --offline
 
       - name: Test using Node.js
         uses: actions/setup-node@v1
