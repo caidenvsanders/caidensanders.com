@@ -26,8 +26,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - run: cd packages/web-frontend
       - run: yarn test:ci
+        working-directory: packages/web-frontend
 
       - name: Tests Success
         if: ${{ success() }}
