@@ -5,21 +5,21 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-// Dotenv Import & Initialization
-import * as dotenv from 'dotenv';
-dotenv.config();
-
 // Express Imports
 import express from 'express';
 import bodyParser from 'body-parser';
 
+// Accessories Imports
+import cors from 'cors';
+
+// Dotenv Import
+import * as dotenv from 'dotenv';
+
 // Mailer Imports
 import sendMail from './utils/email';
 
-// Accessories Imports
-import cors from 'cors';
-import fs from 'fs';
-import path from 'path';
+// Initialize Dotenv
+dotenv.config();
 
 // Initialize express application
 const app = express();
@@ -33,18 +33,25 @@ app.get('/', (req, res) => {});
 /**
  * Send myself an email on contact form submission
  */
-app.post('/email', (req, res) => {
-  sendMail({
-    to: 'caidensanders@gmail.com',
-    subject: `${req.body.email_name as string} ${
-      req.body.email_from as string
-    }`,
-    html: req.body.email_message as string,
-  });
-  res.send(
-    `Email Name: ${req.body.email_name} \nEmail From: ${req.body.email_from} \nEmail Message: ${req.body.email_message}`,
-  );
-});
+app.post(
+  '/email',
+  (
+    req: {
+      body: { emailName: string; emailFrom: string; emailMessage: string };
+    },
+    res,
+  ) => {
+    sendMail({
+      to: 'caidensanders@gmail.com',
+      subject: `${req.body.emailName} ${req.body.emailFrom}`,
+      html: req.body.emailMessage,
+    }).catch((err) => console.error(err));
+
+    res.send(
+      `Email Name: ${req.body.emailName} \nEmail From: ${req.body.emailFrom} \nEmail Message: ${req.body.emailMessage}`,
+    );
+  },
+);
 
 // Set cors options and enable cors
 const corsOptions = {
@@ -54,7 +61,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Listen to HTTP
-const PORT = process.env.PORT || process.env.API_PORT;
+const PORT = process.env.PORT ?? process.env.API_PORT;
 app.listen({ port: PORT }, () => {
-  console.log(`Server ready at http://localhost:${PORT}`);
+  console.log(`Server ready at http://localhost:${PORT as string}`);
 });

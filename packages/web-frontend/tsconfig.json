@@ -23,5 +23,5 @@
   },
   "include": [
     "src"
-, "__e2e__", "src/__tests__"  ]
+, "src/__e2e__", "src/__tests__"  ]
 }
