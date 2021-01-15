@@ -6,15 +6,15 @@ For each of the following subcategories, developing, building, and testing, ther
 
 # Developing
 
-* For API: yarn --cwd packages/api dev
-* For WebFrontend: yarn --cwd packages/frontend start
+* For API: ```yarn --cwd packages/api dev```
+* For WebFrontend: ```yarn --cwd packages/frontend start```
 
 # Building
 
-* For API: yarn APIBuildCI
-* For WebFrontend: yarn WebFrontendBuildCI
+* For API: ```yarn APIBuildCI```
+* For WebFrontend: ```yarn WebFrontendBuildCI```
 
 # Testing
 
-* For API: yarn APITestCI
-* For WebFrontend: yarn WebFrontendTestCI
+* For API: ```yarn APITestCI```
+* For WebFrontend: ```yarn WebFrontendTestCI```
