@@ -12,21 +12,20 @@ import '@testing-library/jest-dom/extend-expect';
 import { mount } from 'enzyme';
 
 // React Imports
-import { lazy, Suspense } from 'React';
 import { BrowserRouter } from 'react-router-dom';
+
+// React Page Imports
+import Home from '../pages/Home';
+import About from '../pages/About';
+import Portfolio from '../pages/Portfolio';
+import Contact from '../pages/Contact';
+import NotFound from '../pages/NotFound';
 
 // React Component Imports
 import App from '../App';
 
 // Miscellaneous Imports
 import { DEFAULT, HOME, ABOUT, PORTFOLIO, CONTACT } from '../routes';
-
-// React Page Imports
-const Home = lazy(() => import('../pages/Home'));
-const About = lazy(() => import('../pages/About'));
-const Portfolio = lazy(() => import('../pages/Portfolio'));
-const Contact = lazy(() => import('../pages/Contact'));
-const NotFound = lazy(() => import('../pages/NotFound'));
 
 window.IntersectionObserver = class {
   readonly root: Element | null;
@@ -57,60 +56,42 @@ const renderWithRouter = (
 ) => {
   window.history.pushState({}, 'Test page', route);
 
-  return mount(
-    <BrowserRouter>
-      <Suspense fallback={<div />}>{ui}</Suspense>
-    </BrowserRouter>,
-  );
+  return mount(<BrowserRouter>{ui}</BrowserRouter>);
 };
 
 describe('testing - app routing', () => {
   test('app routing - DEFAULT (/)', async () => {
     const wrapper = renderWithRouter(<App />, { route: DEFAULT });
 
-    console.log(wrapper.debug());
-    await Home;
-
-    expect(wrapper.contains(<Home /> || <div />)).toBeFalsy();
+    expect(wrapper.contains(<Home /> || <div />)).toBeDefined();
   });
 
   test('app routing - HOME (/home)', async () => {
     const wrapper = renderWithRouter(<App />, { route: HOME });
-
-    await Home;
-
-    expect(wrapper.contains(<Home /> || <div />)).toBeFalsy();
+    expect(wrapper.contains(<Home /> || <div />)).toBeDefined();
   });
 
   test('app routing - ABOUT (/about)', async () => {
     const wrapper = renderWithRouter(<App />, { route: ABOUT });
 
-    await About;
-
-    expect(wrapper.contains(<About /> || <div />)).toBeFalsy();
+    expect(wrapper.contains(<About /> || <div />)).toBeDefined();
   });
 
   test('app routing - PORTFOLIO (/portfolio)', async () => {
     const wrapper = renderWithRouter(<App />, { route: PORTFOLIO });
 
-    await Portfolio;
-
-    expect(wrapper.contains(<Portfolio /> || <div />)).toBeFalsy();
+    expect(wrapper.contains(<Portfolio /> || <div />)).toBeDefined();
   });
 
   test('app routing - CONTACT (/contact)', async () => {
     const wrapper = renderWithRouter(<App />, { route: CONTACT });
 
-    await Contact;
-
-    expect(wrapper.contains(<Contact /> || <div />)).toBeFalsy();
+    expect(wrapper.contains(<Contact /> || <div />)).toBeDefined();
   });
 
-  test('app routing - INVALID ROUTE (/*)', async () => {
-    const wrapper = renderWithRouter(<App />, { route: '/invalid' });
+  // test('app routing - INVALID ROUTE (/*)', async () => {
+  //   const wrapper = renderWithRouter(<App />, { route: '/invalid' });
 
-    await NotFound;
-
-    expect(wrapper.contains(<NotFound /> || <div />)).toBeFalsy();
-  });
+  //   expect(wrapper.contains(<NotFound /> || <div />)).toBeDefined();
+  // });
 });
