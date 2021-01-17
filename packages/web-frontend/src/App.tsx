@@ -10,7 +10,6 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // CSS Frameworks & Animation Imports
-import styled from 'styled-components';
 import { MotionConfig, AnimationFeature, GesturesFeature } from 'framer-motion';
 
 // CSS Component Imports
@@ -18,6 +17,7 @@ import OverflowOverride from 'css/OverflowOverride';
 
 // React Component Imports
 import ScrollToTop from 'components/ScrollToTop';
+import BlackCover from 'components/BlackCover';
 
 // Miscellaneous Imports
 import { DEFAULT, HOME, ABOUT, PORTFOLIO, CONTACT } from 'routes';
@@ -28,16 +28,6 @@ const About = lazy(() => import('pages/About'));
 const Portfolio = lazy(() => import('pages/Portfolio'));
 const Contact = lazy(() => import('pages/Contact'));
 const NotFound = lazy(() => import('pages/NotFound'));
-
-// BlackCover CSS Element
-const BlackCover = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vh;
-  background: #000;
-`;
 
 // App React Component
 const App = () => {
