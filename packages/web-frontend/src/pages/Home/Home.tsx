@@ -40,16 +40,6 @@ interface HomeContainerProps {
   transformX: number;
 }
 
-// HomeRoot CSS Element
-const HomeRoot = styled.div`
-  display: block;
-`;
-
-// HomeRootWrapper CSS Element
-const HomeRootWrapper = styled.div`
-  display: block;
-`;
-
 // HomeContainer CSS Element
 const HomeContainer = styled.div<HomeContainerProps>`
   height: 100%;
@@ -145,37 +135,33 @@ const Home = () => {
       }}
     >
       <TopNavigationBar />
-      <HomeRoot>
-        <HomeRootWrapper>
-          <HomeContainer
-            transformX={
-              active === 1
-                ? 0
-                : active === 2
-                ? -1 * height
-                : active === 3
-                ? -1 * height * 2
-                : active === 4
-                ? -1 * height * 3
-                : 0
-            }
-          >
-            <HomeLanding />
-            <Suspense fallback={<BlackCover />}>
-              <HomeAbout />
-            </Suspense>
-            <Suspense fallback={<BlackCover />}>
-              <HomePortfolio />
-            </Suspense>
-            <Suspense fallback={<BlackCover />}>
-              <HomeContact />
-            </Suspense>
-          </HomeContainer>
-          <StarBackground />
-          <MoonBackground />
-          <SkyBackground />
-        </HomeRootWrapper>
-      </HomeRoot>
+      <HomeContainer
+        transformX={
+          active === 1
+            ? 0
+            : active === 2
+            ? -1 * height
+            : active === 3
+            ? -1 * height * 2
+            : active === 4
+            ? -1 * height * 3
+            : 0
+        }
+      >
+        <HomeLanding />
+        <Suspense fallback={<BlackCover />}>
+          <HomeAbout />
+        </Suspense>
+        <Suspense fallback={<BlackCover />}>
+          <HomePortfolio />
+        </Suspense>
+        <Suspense fallback={<BlackCover />}>
+          <HomeContact />
+        </Suspense>
+      </HomeContainer>
+      <StarBackground />
+      <MoonBackground />
+      <SkyBackground />
       <Scrolldown active={active === 1 ? true : false} />
       <LeftNavigationBar active={active} click={debouncedActive.callback} />
     </div>
