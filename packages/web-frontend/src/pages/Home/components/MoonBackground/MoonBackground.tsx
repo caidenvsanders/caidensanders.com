@@ -9,7 +9,7 @@
 import styled from 'styled-components';
 
 // React Components
-import MoonlightImage from './MoonlightImage';
+import MoonlightImage from 'pages/Home/components/MoonBackground/MoonlightImage';
 
 // MoonBackground CSS Element
 const MoonlightWrapper = styled.div`
