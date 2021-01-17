@@ -20,7 +20,7 @@ import ScrollToTop from 'components/ScrollToTop';
 import BlackCover from 'components/BlackCover';
 
 // Miscellaneous Imports
-import { DEFAULT, HOME, ABOUT, PORTFOLIO, CONTACT } from 'routes';
+import ROUTES from 'routes';
 
 // React Page Imports
 const Home = lazy(() => import('pages/Home'));
@@ -37,7 +37,7 @@ const App = () => {
         <ScrollToTop />
         <Switch>
           {/*  /contact */}
-          <Route exact path={CONTACT}>
+          <Route exact path={ROUTES.CONTACT}>
             <OverflowOverride />
             <Suspense fallback={<BlackCover />}>
               <Contact />
@@ -45,7 +45,7 @@ const App = () => {
           </Route>
 
           {/* /portfolio */}
-          <Route exact path={PORTFOLIO}>
+          <Route exact path={ROUTES.PORTFOLIO}>
             <OverflowOverride />
             <Suspense fallback={<BlackCover />}>
               <Portfolio />
@@ -53,7 +53,7 @@ const App = () => {
           </Route>
 
           {/* /about */}
-          <Route exact path={ABOUT}>
+          <Route exact path={ROUTES.ABOUT}>
             <OverflowOverride />
             <Suspense fallback={<BlackCover />}>
               <About />
@@ -61,7 +61,7 @@ const App = () => {
           </Route>
 
           {/* / || /home */}
-          <Route exact path={[DEFAULT, HOME]}>
+          <Route exact path={[ROUTES.DEFAULT, ROUTES.HOME]}>
             <Suspense fallback={<BlackCover />}>
               <Home />
             </Suspense>

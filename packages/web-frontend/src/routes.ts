@@ -34,3 +34,9 @@ export { PORTFOLIO };
 // ---------------------------------------------
 const CONTACT: string = '/contact';
 export { CONTACT };
+
+// ---------------------------------------------
+// Default Export of All Routes
+// ---------------------------------------------
+const ROUTES = { DEFAULT, HOME, ABOUT, PORTFOLIO, CONTACT };
+export default ROUTES;
