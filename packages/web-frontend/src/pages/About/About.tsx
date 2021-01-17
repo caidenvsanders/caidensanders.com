@@ -6,12 +6,14 @@
  */
 
 // CSS Frameworks & Animation Imports
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 // React Component Imports
 import TopNavigationBar from 'components/NavigationBar/Top';
 
 import PageImage from 'components/PageImage';
+
+import Skillset from 'pages/About/components/Skillset';
 
 import Footer from 'components/Footer';
 
@@ -499,120 +501,6 @@ const SkillsetContentList = styled.ul`
   }
 `;
 
-const SkillsetContentItem = styled.li`
-  margin-top: 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media screen and (max-width: 420px) {
-    margin-top: 2rem;
-  }
-`;
-
-const SkillsetContentIcon = styled.div`
-  width: 10.6382%;
-  align-self: center;
-
-  img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    width: 100%;
-  }
-`;
-
-const SkillsetContentDetail = styled.div`
-  width: 85.1063%;
-`;
-
-const SkillsetContentMeta = styled.div`
-  margin-bottom: 0.8rem;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const SkillsetContentName = styled.div`
-  display: flex;
-  align-items: flex-end;
-
-  h4 {
-    font-size: 1.5rem;
-    color: #072142;
-    letter-spacing: 0.2em;
-    line-height: 1.2;
-
-    @media screen and (max-width: 420px) {
-      font-size: 0.75rem;
-    }
-  }
-
-  p {
-    font-size: 0.875rem;
-    line-height: 1.2;
-    color: #c0c5ca;
-    margin-left: 0.5rem;
-    letter-spacing: 0.2em;
-
-    @media screen and (max-width: 420px) {
-      font-size: 0.625rem;
-    }
-  }
-`;
-
-const SkillsetContentPercentage = styled.p`
-  font-size: 1.5rem;
-  color: #072142;
-  letter-spacing: 0.2em;
-  line-height: 1.2;
-
-  @media screen and (max-width: 420px) {
-    font-size: 0.75rem;
-  }
-
-  span {
-    font-size: 1rem;
-    line-height: 1.2;
-    color: #072142;
-
-    @media screen and (max-width: 420px) {
-      font-size: 0.625rem;
-    }
-  }
-`;
-
-const SkillsetContentBarKeyframes = keyframes`
-  0% { width: 10%; }
-  100% { width: 100%; }
-`;
-
-const SkillsetContentBar = styled.div`
-  width: 100%;
-  height: 0.875rem;
-  background: #fff;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px 0 rgba(7, 33, 66, 0.15);
-
-  @media screen and (max-width: 420px) {
-    height: 0.4375rem;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    border-radius: 10px;
-    width: 10%;
-
-    animation: ${SkillsetContentBarKeyframes} 1.5s forwards;
-
-    background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
-  }
-`;
-
 // About React Component
 const About = () => {
   return (
@@ -738,128 +626,62 @@ const About = () => {
           </SkillsetContainerTop>
           <SkillsetContent>
             <SkillsetContentList>
-              <SkillsetContentItem>
-                <SkillsetContentIcon>
-                  <img
-                    src="https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974763/react-160_deseyq.png"
-                    alt={'React Icon'}
-                  />
-                </SkillsetContentIcon>
-                <SkillsetContentDetail>
-                  <SkillsetContentMeta>
-                    <SkillsetContentName>
-                      <h4>React</h4>
-                      <p>3 YEARS</p>
-                    </SkillsetContentName>
-                    <SkillsetContentPercentage>
-                      100<span>%</span>
-                    </SkillsetContentPercentage>
-                  </SkillsetContentMeta>
-                  <SkillsetContentBar />
-                </SkillsetContentDetail>
-              </SkillsetContentItem>
-              <SkillsetContentItem>
-                <SkillsetContentIcon>
-                  <img
-                    src="https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974764/express-160_iwswea.png"
-                    alt={'Express Icon'}
-                  />
-                </SkillsetContentIcon>
-                <SkillsetContentDetail>
-                  <SkillsetContentMeta>
-                    <SkillsetContentName>
-                      <h4>Express</h4>
-                      <p>3 YEARS</p>
-                    </SkillsetContentName>
-                    <SkillsetContentPercentage>
-                      100<span>%</span>
-                    </SkillsetContentPercentage>
-                  </SkillsetContentMeta>
-                  <SkillsetContentBar />
-                </SkillsetContentDetail>
-              </SkillsetContentItem>
-              <SkillsetContentItem>
-                <SkillsetContentIcon>
-                  <img
-                    src="https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974764/google-160_v0dq2i.jpg"
-                    alt={'Google Icon'}
-                  />
-                </SkillsetContentIcon>
-                <SkillsetContentDetail>
-                  <SkillsetContentMeta>
-                    <SkillsetContentName>
-                      <h4>SEO</h4>
-                      <p>4 YEARS</p>
-                    </SkillsetContentName>
-                    <SkillsetContentPercentage>
-                      100<span>%</span>
-                    </SkillsetContentPercentage>
-                  </SkillsetContentMeta>
-                  <SkillsetContentBar />
-                </SkillsetContentDetail>
-              </SkillsetContentItem>
+              <Skillset
+                imageUrl={
+                  'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974763/react-160_deseyq.png'
+                }
+                imageAlt={'React Icon'}
+                skillsetName={'React'}
+                skillsetTime={'3 YEARS'}
+                skillsetPercentage={'100'}
+              />
+              <Skillset
+                imageUrl={
+                  'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974764/express-160_iwswea.png'
+                }
+                imageAlt={'Express Icon'}
+                skillsetName={'Express'}
+                skillsetTime={'3 YEARS'}
+                skillsetPercentage={'100'}
+              />
+              <Skillset
+                imageUrl={
+                  'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974764/google-160_v0dq2i.jpg'
+                }
+                imageAlt={'Google Icon'}
+                skillsetName={'Google'}
+                skillsetTime={'3 YEARS'}
+                skillsetPercentage={'100'}
+              />
             </SkillsetContentList>
             <SkillsetContentList>
-              <SkillsetContentItem>
-                <SkillsetContentIcon>
-                  <img
-                    src="https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974764/aws-160_tgamlo.png"
-                    alt={'AWS Icon'}
-                  />
-                </SkillsetContentIcon>
-                <SkillsetContentDetail>
-                  <SkillsetContentMeta>
-                    <SkillsetContentName>
-                      <h4>Amazon Web Services</h4>
-                      <p>3 YEARS</p>
-                    </SkillsetContentName>
-                    <SkillsetContentPercentage>
-                      100<span>%</span>
-                    </SkillsetContentPercentage>
-                  </SkillsetContentMeta>
-                  <SkillsetContentBar />
-                </SkillsetContentDetail>
-              </SkillsetContentItem>
-              <SkillsetContentItem>
-                <SkillsetContentIcon>
-                  <img
-                    src="https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974764/wordpress-160_lf0bo3.png"
-                    alt={'Wordpress Icon'}
-                  />
-                </SkillsetContentIcon>
-                <SkillsetContentDetail>
-                  <SkillsetContentMeta>
-                    <SkillsetContentName>
-                      <h4>Wordpress</h4>
-                      <p>3 YEARS</p>
-                    </SkillsetContentName>
-                    <SkillsetContentPercentage>
-                      100<span>%</span>
-                    </SkillsetContentPercentage>
-                  </SkillsetContentMeta>
-                  <SkillsetContentBar />
-                </SkillsetContentDetail>
-              </SkillsetContentItem>
-              <SkillsetContentItem>
-                <SkillsetContentIcon>
-                  <img
-                    src="https://res.cloudinary.com/ddbkztvvw/image/upload/v1609975402/squarespace-160_qcdp5r.png"
-                    alt={'SquareSpace Icon'}
-                  />
-                </SkillsetContentIcon>
-                <SkillsetContentDetail>
-                  <SkillsetContentMeta>
-                    <SkillsetContentName>
-                      <h4>SquareSpace</h4>
-                      <p>3 YEARS</p>
-                    </SkillsetContentName>
-                    <SkillsetContentPercentage>
-                      100<span>%</span>
-                    </SkillsetContentPercentage>
-                  </SkillsetContentMeta>
-                  <SkillsetContentBar />
-                </SkillsetContentDetail>
-              </SkillsetContentItem>
+              <Skillset
+                imageUrl={
+                  'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974764/aws-160_tgamlo.png'
+                }
+                imageAlt={'AWS Icon'}
+                skillsetName={'AWS'}
+                skillsetTime={'3 YEARS'}
+                skillsetPercentage={'100'}
+              />
+              <Skillset
+                imageUrl={
+                  'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609974764/wordpress-160_lf0bo3.png'
+                }
+                imageAlt={'Wordpress Icon'}
+                skillsetName={'Wordpress'}
+                skillsetTime={'3 YEARS'}
+                skillsetPercentage={'100'}
+              />
+              <Skillset
+                imageUrl={
+                  'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609975402/squarespace-160_qcdp5r.png'
+                }
+                imageAlt={'SquareSpace Icon'}
+                skillsetName={'SquareSpace'}
+                skillsetTime={'3 YEARS'}
+                skillsetPercentage={'100'}
+              />
             </SkillsetContentList>
           </SkillsetContent>
         </SkillsetContainer>
