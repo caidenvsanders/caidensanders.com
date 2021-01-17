@@ -10,6 +10,7 @@ import { useState, lazy, Suspense } from 'react';
 
 // CSS Frameworks & Animation Imports
 import styled from 'styled-components';
+import { m as motion } from 'framer-motion';
 
 // React Component Imports
 import TopNavigationBar from 'components/NavigationBar/Top';
@@ -82,7 +83,7 @@ const ArrowDownKeyPress = (active: number, debouncedActive: any) => {
 const onMouseWheel = (
   e: { deltaY: number },
   active: number,
-  debouncedActive: any
+  debouncedActive: any,
 ) => {
   if (e.deltaY > 0) {
     if (active === 4) debouncedActive.callback(1);
@@ -118,7 +119,7 @@ const Home = () => {
       setActive(active);
     },
     1600,
-    { maxWait: 1600, leading: true, trailing: false }
+    { maxWait: 1600, leading: true, trailing: false },
   );
 
   const height = useWindowHeight();

@@ -14,54 +14,12 @@ import { InView } from 'react-intersection-observer';
 
 import useWindowHeight from 'hooks/useWindowHeight';
 
+// CSS Component Imports
+import Slide from 'css/Slide';
+
 // React Component Imports
 import Title from 'components/Title';
 import Image from 'components/Image';
-
-// Root CSS Element
-const Root = styled.div<{ height: number }>`
-  height: ${(props) => props.height + 'px'};
-
-  display: block;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-`;
-
-// PageWrapper CSS Element
-const PageWrapper = styled.div`
-  position: relative;
-
-  display: block;
-  vertical-align: middle;
-  width: 100%;
-  height: inherit;
-`;
-
-// Page CSS Element
-const Page = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  color: #fff;
-
-  @media screen and (max-width: 420px) {
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    max-height: 667px;
-  }
-`;
 
 // HomePortfolio React Component
 const HomePortfolio = () => {
@@ -79,7 +37,7 @@ const HomePortfolio = () => {
   };
 
   return (
-    <Root height={height}>
+    <Slide.Root height={height}>
       <InView
         as="div"
         onChange={(inView, entry) => inViewCallback(inView)}
@@ -87,8 +45,8 @@ const HomePortfolio = () => {
         threshold={1}
         style={{ width: '100%', height: '100%' }}
       >
-        <PageWrapper>
-          <Page>
+        <Slide.PageWrapper>
+          <Slide.Page>
             <Title
               controls={controls}
               headingText={<>My Portfolio</>}
@@ -104,10 +62,10 @@ const HomePortfolio = () => {
               controls={controls}
               link={'/portfolio'}
             />
-          </Page>
-        </PageWrapper>
+          </Slide.Page>
+        </Slide.PageWrapper>
       </InView>
-    </Root>
+    </Slide.Root>
   );
 };
 
