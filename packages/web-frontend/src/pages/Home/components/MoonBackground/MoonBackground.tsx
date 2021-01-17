@@ -56,19 +56,11 @@ const Moonlight = styled.div`
   }
 `;
 
-// MoonlightWrapper CSS Element
-const MoonlightContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
 const MoonBackground = () => {
   return (
     <MoonlightWrapper>
       <Moonlight>
-        <MoonlightContainer>
-          <MoonlightImage />
-        </MoonlightContainer>
+        <MoonlightImage />
       </Moonlight>
     </MoonlightWrapper>
   );
