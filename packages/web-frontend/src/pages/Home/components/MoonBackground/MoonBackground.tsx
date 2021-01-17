@@ -7,10 +7,9 @@
 
 // CSS Frameworks & Animation Imports
 import styled from 'styled-components';
-import { m as motion } from 'framer-motion';
 
-// Hook Imports
-import useMousePosition from 'hooks/useMousePosition';
+// React Components
+import MoonlightImage from './MoonlightImage';
 
 // MoonBackground CSS Element
 const MoonlightWrapper = styled.div`
@@ -63,27 +62,12 @@ const MoonlightContainer = styled.div`
   height: 100%;
 `;
 
-// MoonlightImage CSS Element
-const MoonlightImage = styled(motion.div)`
-  width: 100%;
-  height: 100%;
-
-  background: url('https://res.cloudinary.com/ddbkztvvw/image/upload/v1609975091/moonlight_fg20ka.svg')
-    no-repeat;
-  background-size: 100%;
-`;
-
 const MoonBackground = () => {
-  const { mouseX, mouseY } = useMousePosition();
-
   return (
     <MoonlightWrapper>
       <Moonlight>
         <MoonlightContainer>
-          <MoonlightImage
-            animate={{ x: mouseX / 25, y: mouseY / 25 }}
-            transition={{ type: 'spring', stiffness: 100 }}
-          />
+          <MoonlightImage />
         </MoonlightContainer>
       </Moonlight>
     </MoonlightWrapper>
