@@ -17,7 +17,7 @@ import { MotionConfig, AnimationFeature, GesturesFeature } from 'framer-motion';
 import OverflowOverride from 'css/OverflowOverride';
 
 // React Component Imports
-import ScrollToTop from 'ScrollToTop';
+import ScrollToTop from 'components/ScrollToTop';
 
 // Miscellaneous Imports
 import { DEFAULT, HOME, ABOUT, PORTFOLIO, CONTACT } from 'routes';
