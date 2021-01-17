@@ -10,7 +10,6 @@ import { useState, lazy, Suspense } from 'react';
 
 // CSS Frameworks & Animation Imports
 import styled from 'styled-components';
-import { m as motion } from 'framer-motion';
 
 // React Component Imports
 import TopNavigationBar from 'components/NavigationBar/Top';
@@ -25,6 +24,7 @@ import Scrolldown from 'components/Scrolldown';
 import LeftNavigationBar from 'components/NavigationBar/Left';
 
 // Hook Imports
+import { useStorageState } from 'react-storage-hooks';
 import { useDebouncedCallback } from 'use-debounce';
 
 import useWindowHeight from 'hooks/useWindowHeight';
@@ -113,7 +113,11 @@ const onEndTouch = (e: any, active: number, debouncedActive: any) => {
 
 // Home React Component
 const Home = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useStorageState(
+    sessionStorage,
+    'state-counter',
+    1,
+  );
   const debouncedActive = useDebouncedCallback(
     (active: number) => {
       setActive(active);

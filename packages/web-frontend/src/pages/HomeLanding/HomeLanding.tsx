@@ -6,8 +6,7 @@
  */
 
 // CSS Frameworks & Animation Imports
-import styled from 'styled-components';
-import { m as motion, useAnimation } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
 
 // Hook Imports
 import { InView } from 'react-intersection-observer';
