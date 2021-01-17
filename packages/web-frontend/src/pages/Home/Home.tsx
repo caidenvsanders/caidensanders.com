@@ -22,6 +22,7 @@ import SkyBackground from 'pages/Home/components/SkyBackground';
 
 import Scrolldown from 'components/Scrolldown';
 import LeftNavigationBar from 'components/NavigationBar/Left';
+import BlackCover from 'components/BlackCover';
 
 // Hook Imports
 import { useStorageState } from 'react-storage-hooks';
@@ -160,13 +161,13 @@ const Home = () => {
             }
           >
             <HomeLanding />
-            <Suspense fallback={<p>Loading</p>}>
+            <Suspense fallback={<BlackCover />}>
               <HomeAbout />
             </Suspense>
-            <Suspense fallback={<p>Loading</p>}>
+            <Suspense fallback={<BlackCover />}>
               <HomePortfolio />
             </Suspense>
-            <Suspense fallback={<p>Loading</p>}>
+            <Suspense fallback={<BlackCover />}>
               <HomeContact />
             </Suspense>
           </HomeContainer>
