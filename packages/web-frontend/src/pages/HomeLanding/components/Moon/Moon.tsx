@@ -6,7 +6,6 @@
  */
 
 // CSS Frameworks & Animation Imports
-import styled from 'styled-components';
 import { m as motion } from 'framer-motion';
 
 // Type Declarations

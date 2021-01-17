@@ -5,10 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-// React Imports
-import { useState } from 'react';
-import type { Dispatch, SetStateAction } from 'react';
-
 // CSS Frameworks & Animation Imports
 import styled from 'styled-components';
 

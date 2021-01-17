@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 // CSS Frameworks & Animation Imports
 import styled from 'styled-components';
-import { AnimatePresence, m as motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 
 // Root CSS Element
 const Root = styled.header`

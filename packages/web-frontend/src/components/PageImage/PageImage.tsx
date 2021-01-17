@@ -281,15 +281,6 @@ const backArrowVariants = {
   hovering: { x: -10, transition: { delay: 0, duration: 0.3 } },
 };
 
-// Button Animation Variants
-const buttonVariants = {
-  nonhovering: {
-    y: 0,
-    transition: { delay: 0.2, duration: 0.3 },
-  },
-  hovering: { y: 10, transition: { delay: 0, duration: 0.3 } },
-};
-
 const PageImage = (props: PageImageProps) => {
   return (
     <PageTop>

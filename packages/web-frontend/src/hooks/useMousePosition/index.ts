@@ -6,7 +6,6 @@
  */
 
 // React Imports
-import { update } from 'lodash';
 import { useState, useEffect } from 'react';
 
 // Type Declarations
@@ -50,6 +49,7 @@ const useMousePosition = () => {
 
     return () =>
       window.removeEventListener('mousemove', updateMousePositionThrottled);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return mousePosition;

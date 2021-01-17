@@ -6,7 +6,6 @@
  */
 
 // CSS Frameworks & Animation Imports
-import styled from 'styled-components';
 import { useAnimation } from 'framer-motion';
 
 // Hook Imports
