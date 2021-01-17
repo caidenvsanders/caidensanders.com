@@ -115,7 +115,7 @@ const onEndTouch = (e: any, active: number, debouncedActive: any) => {
 const Home = () => {
   const [active, setActive] = useStorageState(
     sessionStorage,
-    'state-counter',
+    'active-slide',
     1,
   );
   const debouncedActive = useDebouncedCallback(
