@@ -132,19 +132,19 @@ const Home = () => {
   useKeyPress('ArrowDown', ArrowDownKeyPress(active, debouncedActive));
 
   return (
-    <>
+    <div
+      onWheel={(e) => {
+        onMouseWheel(e, active, debouncedActive);
+      }}
+      onTouchStart={(e) => {
+        onStartTouch(e);
+      }}
+      onTouchEnd={(e) => {
+        onEndTouch(e, active, debouncedActive);
+      }}
+    >
       <TopNavigationBar />
-      <HomeRoot
-        onWheel={(e) => {
-          onMouseWheel(e, active, debouncedActive);
-        }}
-        onTouchStart={(e) => {
-          onStartTouch(e);
-        }}
-        onTouchEnd={(e) => {
-          onEndTouch(e, active, debouncedActive);
-        }}
-      >
+      <HomeRoot>
         <HomeRootWrapper>
           <HomeContainer
             transformX={
@@ -177,7 +177,7 @@ const Home = () => {
       </HomeRoot>
       <Scrolldown active={active === 1 ? true : false} />
       <LeftNavigationBar active={active} click={debouncedActive.callback} />
-    </>
+    </div>
   );
 };
 
