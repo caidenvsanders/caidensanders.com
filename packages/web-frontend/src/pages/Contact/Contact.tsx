@@ -41,7 +41,7 @@ const Contact = () => {
         description={'Shoot me a message.'}
         buttonText={'Message me!'}
         source={
-          'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609976998/portfolio-background_skabjh.webp'
+          'https://res.cloudinary.com/ddbkztvvw/image/upload/v1610402354/coffee-image_v8eff4.webp'
         }
       ></PageImage>
       <Wrapper id="wrapper">

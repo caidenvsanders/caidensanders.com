@@ -55,7 +55,7 @@ const HomePortfolio = () => {
             />
             <Image
               source={
-                'https://res.cloudinary.com/ddbkztvvw/image/upload/v1610402359/reile-image_kdpeiq.webp'
+                'https://res.cloudinary.com/ddbkztvvw/image/upload/v1610934408/portfolio_oioetj.webp'
               }
               number={<>02</>}
               controls={controls}

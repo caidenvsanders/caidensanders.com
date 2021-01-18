@@ -511,7 +511,7 @@ const About = () => {
         description={`Hello! I'm Caiden Sanders.`}
         buttonText={'Learn more!'}
         source={
-          'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609976998/portfolio-background_skabjh.webp'
+          'https://res.cloudinary.com/ddbkztvvw/image/upload/v1610402236/design-image_x0auw1.webp'
         }
       ></PageImage>
       <Wrapper id={'wrapper'}>

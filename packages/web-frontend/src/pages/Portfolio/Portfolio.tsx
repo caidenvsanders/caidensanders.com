@@ -21,7 +21,7 @@ const Portfolio = () => {
         description={`Websites that I've developed.`}
         buttonText={'See them!'}
         source={
-          'https://res.cloudinary.com/ddbkztvvw/image/upload/v1609976998/portfolio-background_skabjh.webp'
+          'https://res.cloudinary.com/ddbkztvvw/image/upload/v1610934408/portfolio_oioetj.webp'
         }
       ></PageImage>
       <Footer />
