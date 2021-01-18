@@ -28,17 +28,14 @@ jobs:
         run: |
           yarn install --check-files --force
           yarn --cwd packages/web-frontend install --check-files --force
-
-      # Copy file VIA SSH Key to Ubuntu AWS EC2
-      - name: Copy file VIA SSH Key to Ubuntu AWS EC2
-      - uses: appleboy/scp-action@master
+      
+      # Build web-frontend into /build directory and gzipper
+      - name: Build Web-Frontend and GZIP
+        uses: actions/setup-node@v1
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.KEY }}
-          source: ${{ secrets.SOURCE }}
-          target: ${{ secrets.TARGET }}
+          node-version: '12'
+      - run: |
+          yarn --cwd packages/web-frontend build
       
 
       
