@@ -101,16 +101,9 @@ const Input = styled.input`
   padding: 0.5rem;
   width: 50rem;
 
-  border: linear-gradient(
-    to bottom,
-    #072142,
-    #061c37,
-    #07182b,
-    #061220,
-    #020b16
-  );
-  border-width: 0.5px;
-  border-radius: 12px;
+  border: 0;
+  background: transparent;
+  border-bottom: 0.5px solid black;
   outline: none;
 `;
 
@@ -120,15 +113,8 @@ const Textarea = styled.textarea`
   height: 10rem;
   width: 50rem;
 
-  border: linear-gradient(
-    to bottom,
-    #072142,
-    #061c37,
-    #07182b,
-    #061220,
-    #020b16
-  );
-  border-radius: 12px;
+  border: 0;
+  border-bottom: 1px solid black;
   outline: none;
 `;
 
@@ -216,6 +202,7 @@ const ContactBlock = () => {
               type="text"
               value={nameInput}
               onChange={handleNameChange}
+              placeholder={'What name do you go by?'}
             ></Input>
           </LabelWrap>
           <LabelWrap>
@@ -224,6 +211,7 @@ const ContactBlock = () => {
               type="email"
               value={emailInput}
               onChange={handleEmailChange}
+              placeholder={'Where can I contact you back at?'}
             ></Input>
           </LabelWrap>
           <LabelWrap>
@@ -231,6 +219,7 @@ const ContactBlock = () => {
             <Textarea
               value={messageInput}
               onChange={handleMessageChange}
+              placeholder={'Start writing your message...'}
             ></Textarea>
           </LabelWrap>
           <ButtonWrapper>
