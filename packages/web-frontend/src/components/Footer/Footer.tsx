@@ -93,7 +93,7 @@ const Icon = styled.a<IconCSSProps>`
 `;
 
 // Footer React Component
-const Footer = (props: any) => {
+const Footer = () => {
   return (
     <FooterContainer>
       <FooterText>caidensanders@gmail.com</FooterText>
