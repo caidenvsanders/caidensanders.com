@@ -55,7 +55,7 @@ const PageTopInner = styled.div`
 `;
 
 // BackArrow CSS Element
-const BackArrow = styled(motion.a)`
+const BackArrow = styled(motion.div)`
   position: fixed;
   top: 120px;
   left: 40px;
