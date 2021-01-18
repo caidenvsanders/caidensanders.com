@@ -31,7 +31,8 @@ jobs:
       
       # Build web-frontend into /build directory and gzipper
       - name: yarn --cwd packages/web-frontend build
-        run: yarn --cwd packages/web-frontend build
+        run: |
+          yarn --cwd packages/web-frontend build
 
       # Copy file VIA SSH Key to Ubuntu AWS EC2
       - name: Copy file VIA SSH Key to Ubuntu AWS EC2
