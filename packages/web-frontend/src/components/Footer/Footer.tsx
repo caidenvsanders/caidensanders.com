@@ -19,22 +19,14 @@ interface IconCSSProps {
 // FooterContainer CSS Element
 const FooterContainer = styled.footer`
   width: 100%;
-  padding: 9rem 0;
+  padding: 9rem 0 0 0;
   text-align: center;
   background-image: linear-gradient(101deg, #072142, #8c2b7a 52%, #ff4d5a);
   position: relative;
   z-index: 100;
 
-  a:first-child {
-    margin-bottom: 1.5rem;
-  }
-
   @media screen and (max-width: 420px) {
     padding: 7.2rem 0;
-
-    a:first-child {
-      margin-bottom: 0.5rem;
-    }
   }
 `;
 
@@ -42,13 +34,14 @@ const FooterContainer = styled.footer`
 const FooterText = styled.a`
   display: block;
   font-size: 1.75rem;
-  line0height: 1.3;
+  line-height: 1.3;
   color: #fff;
   letter-spacing: 0.2em;
-  transitionL 0.3s;
+  text-decoration: none;
+  transition: 0.3s;
 
   @media screen and (max-width: 420px) {
-      font-size: 0.75rem;
+    font-size: 0.75rem;
   }
 `;
 
@@ -59,7 +52,7 @@ const FooterButton = styled.div`
   margin-top: 1.5rem;
   color: #072142;
   background: #fff;
-  line-heihgt: 1;
+  line-height: 1;
   font-weight: bold;
   padding: 18px 32px;
   border-radius: 50px;
@@ -77,10 +70,12 @@ const FooterButton = styled.div`
 
 // FooterIcons CSS Element
 const FooterIcons = styled.div`
-  padding-top: 2rem;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
 `;
 
 // Icon CSS Element
@@ -88,6 +83,7 @@ const Icon = styled.a<IconCSSProps>`
   width: 3rem;
   height: 3rem;
   padding: 1rem;
+  margin-right: 1rem;
   background: url('${(props) => props.source}') no-repeat center center / cover;
   color: #000;
 `;
@@ -96,8 +92,12 @@ const Icon = styled.a<IconCSSProps>`
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterText>caidensanders@gmail.com</FooterText>
-      <FooterText>GitHub</FooterText>
+      <FooterText href={'mailto:caidensanders@gmail.com'}>
+        caidensanders@gmail.com
+      </FooterText>
+      <FooterText href={'https://github.com/caidenvsanders'} target={'_blank'}>
+        GitHub
+      </FooterText>
       <Link to={'/contact'}>
         <FooterButton>Or send me a message on here!</FooterButton>
       </Link>
@@ -106,11 +106,15 @@ const Footer = () => {
           source={
             'https://res.cloudinary.com/ddbkztvvw/image/upload/v1610221928/GitHub-160_n24euk.png'
           }
+          href={'https://github.com/caidenvsanders'}
+          target={'_blank'}
         />
         <Icon
           source={
             'https://res.cloudinary.com/ddbkztvvw/image/upload/v1610222456/StackOverflow-160_oou6ms.webp'
           }
+          href={'https://stackoverflow.com/users/13021396/caidensanders'}
+          target={'_blank'}
         />
       </FooterIcons>
     </FooterContainer>
