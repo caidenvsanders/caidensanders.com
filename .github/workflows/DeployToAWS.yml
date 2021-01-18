@@ -25,14 +25,9 @@ jobs:
       
       # Install Dependencies (from network)
       - name: Install Dependencies (from network)
-      - run: |
+        run: |
           yarn install --check-files --force
           yarn --cwd packages/web-frontend install --check-files --force
-      
-      # Build web-frontend into /build directory and gzipper
-      - name: Build Web-Frontend and GZIP
-      - run: |
-          yarn --cwd packages/web-frontend build
 
       # Copy file VIA SSH Key to Ubuntu AWS EC2
       - name: Copy file VIA SSH Key to Ubuntu AWS EC2
