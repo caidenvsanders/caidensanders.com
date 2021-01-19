@@ -42,7 +42,7 @@ app.post(
     res,
   ) => {
     sendMail({
-      to: 'caidensanders@gmail.com',
+      to: 'me@caidensanders.com',
       subject: `${req.body.emailName} ${req.body.emailFrom}`,
       html: req.body.emailMessage,
     }).catch((err) => console.error(err));

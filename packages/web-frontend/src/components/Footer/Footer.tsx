@@ -92,8 +92,8 @@ const Icon = styled.a<IconCSSProps>`
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterText href={'mailto:caidensanders@gmail.com'}>
-        caidensanders@gmail.com
+      <FooterText href={'mailto:me@caidensanders.com'}>
+        me@caidensanders.com
       </FooterText>
       <FooterText href={'https://github.com/caidenvsanders'} target={'_blank'}>
         GitHub
