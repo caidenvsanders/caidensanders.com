@@ -40,10 +40,10 @@ jobs:
       # Builds TAR in root directory
       - name: Build TAR in Root Directory
         run: |
-          mkdir ../build
+          mkdir build
           cd packages/web-frontend/build
-          cp -TR . ../../../build
-          tar -cvf deploy.tar ../../../build/
+          cp -TR . ../../build
+          tar -cvf deploy.tar ../../build/
 
       # Copy file VIA SSH Key to Ubuntu AWS EC2
       - name: Copy file VIA SSH Key to Ubuntu AWS EC2
