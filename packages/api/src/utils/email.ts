@@ -5,15 +5,22 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// Dotenv Import
+import * as dotenv from 'dotenv';
+
 // Nodemailer Imports
 import nodemailer from 'nodemailer';
+
+// Initialize Dotenv
+dotenv.config();
 
 const { MAIL_SERVICE, MAIL_USER, MAIL_PASS } = process.env;
 
 // Creates transporter object that will help us to send emails
 const transporter = nodemailer.createTransport({
-  port: 465,
+  host: 'smtp.gmail.com',
   service: MAIL_SERVICE,
+  secure: true,
   auth: {
     user: MAIL_USER,
     pass: MAIL_PASS,
@@ -27,7 +34,7 @@ const transporter = nodemailer.createTransport({
  * @param {string} subject of the email
  * @param {string} html content of the email
  */
-const sendMail = ({
+const sendMail = async ({
   to,
   subject,
   html,
@@ -35,9 +42,14 @@ const sendMail = ({
   to: string;
   subject: string;
   html: string;
-}) => {
-  return new Promise((resolve, reject) => {
-    const options = { from: MAIL_USER, to, subject, html };
+}): Promise<unknown> => {
+  return new Promise(async (resolve, reject) => {
+    const options = {
+      from: MAIL_USER,
+      to,
+      subject,
+      html,
+    };
 
     return transporter
       .sendMail(options)

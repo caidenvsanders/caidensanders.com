@@ -181,9 +181,9 @@ const ContactBlock = () => {
       },
 
       body: JSON.stringify({
-        email_name: nameInput,
-        email_from: emailInput,
-        email_message: messageInput,
+        emailName: nameInput,
+        emailFrom: emailInput,
+        emailMessage: messageInput,
       }),
     });
   };
