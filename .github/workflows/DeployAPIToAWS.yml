@@ -42,7 +42,7 @@ jobs:
       # Builds TAR in root directory
       - name: Build TAR in Root Directory
         run: |
-          cp -TR ./packages/api/dist/main.js .
+          cp -TR ./packages/api/dist/main.js ./main.js
           
       # Copy file VIA SSH Key to Ubuntu AWS EC2
       - name: Copy file VIA SSH Key to Ubuntu AWS EC2
