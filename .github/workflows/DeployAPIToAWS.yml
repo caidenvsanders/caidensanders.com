@@ -42,7 +42,7 @@ jobs:
       # Builds TAR in root directory
       - name: Build TAR in Root Directory
         run: |
-          cp -TR ./packages/api/dist/main.js ./main.js
+          cp ./packages/api/dist/main.js ./main.js
           
       # Stop PM2 main.js
       - name: Stop PM2 main.js
