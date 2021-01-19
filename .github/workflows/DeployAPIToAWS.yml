@@ -42,7 +42,7 @@ jobs:
       # Builds TAR in root directory
       - name: Build TAR in Root Directory
         run: |
-          cp packages/api/dist/main.js ./main.js
+          cp -TR packages/api/dist/main.js ./main.js
           
       # Stop PM2 main.js
       - name: Stop PM2 main.js
@@ -63,7 +63,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
           source: "main.js"
-          target: "/home/ubuntu/server"
+          target: "/home/ubuntu/"
           overwrite: true
           
         # Start PM2 main.js
