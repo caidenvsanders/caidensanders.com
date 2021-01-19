@@ -54,6 +54,7 @@ jobs:
           source: "./build/*"
           target: "/srv/www/caidensanders.com/"
           strip_components: 1
+          overwrite: true
       
 
       
