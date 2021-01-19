@@ -41,7 +41,7 @@ jobs:
       - name: Build TAR in Root Directory
         run: |
           mkdir ./build
-          cp -TR ./packages/web-frontend/build/* build
+          cp -TR ./packages/web-frontend/build/ build
           tar -cvf deploy.tar ./build
 
       # Copy file VIA SSH Key to Ubuntu AWS EC2
