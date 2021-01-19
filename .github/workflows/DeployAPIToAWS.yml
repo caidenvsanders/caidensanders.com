@@ -63,7 +63,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
           source: "main.js"
-          target: "/home/ubuntu"
+          target: "/home/ubuntu/server"
           overwrite: true
           
         # Start PM2 main.js
