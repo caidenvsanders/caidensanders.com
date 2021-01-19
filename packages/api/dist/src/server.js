@@ -52,7 +52,7 @@ app.get('/', function (req, res) { });
  */
 app.post('/email', function (req, res) {
     email_1.default({
-        to: 'caidensanders@gmail.com',
+        to: 'me@caidensanders.com',
         subject: req.body.emailName + " " + req.body.emailFrom,
         html: req.body.emailMessage,
     }).catch(function (err) { return console.error(err); });
