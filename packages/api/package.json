@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon dist/main.js",
-    "dev": "nodemon src/server.tsx",
+    "dev": "nodemon --exec \"ts-node src/server.tsx\"",
     "test": "jest",
     "test:ci": "yarn test --watchAll=false --ci",
     "build": "yarn tsc --p ./tsconfig.json",
