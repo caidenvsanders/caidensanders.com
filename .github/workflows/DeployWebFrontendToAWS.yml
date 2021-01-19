@@ -53,7 +53,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
           source: "deploy.tar"
-          target: ${{ secrets.TARGET }}
+          target: "/srv/"
       
 
       
