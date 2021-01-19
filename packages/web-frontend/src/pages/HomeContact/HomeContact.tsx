@@ -51,7 +51,7 @@ const HomeContact = () => {
               headingText={<>Get In Touch</>}
               descriptionText={
                 <>
-                  me.caidensanders@gmail.com <br /> GitHub
+                  me@caidensanders.com <br /> GitHub
                 </>
               }
               buttonText={<>Or message me on here!</>}
