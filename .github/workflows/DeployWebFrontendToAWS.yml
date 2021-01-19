@@ -42,7 +42,6 @@ jobs:
         run: |
           mkdir ./build
           cp -TR ./packages/web-frontend/build/ build
-          tar -cvf deploy.tar ./build
 
       # Copy file VIA SSH Key to Ubuntu AWS EC2
       - name: Copy file VIA SSH Key to Ubuntu AWS EC2
@@ -52,7 +51,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
-          source: "deploy.tar"
+          source: "./build"
           target: "/srv/www/caidensanders.com/"
       
 
