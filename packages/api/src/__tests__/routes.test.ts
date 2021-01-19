@@ -15,9 +15,9 @@ describe('/email API', () => {
         'Content-Type': 'application/json',
       },
       data: {
-        email_name: EMAIL_NAME,
-        email_from: EMAIL_FROM,
-        email_message: EMAIL_MESSAGE,
+        emailName: EMAIL_NAME,
+        emailFrom: EMAIL_FROM,
+        emailMessage: EMAIL_MESSAGE,
       },
     });
     expect(result.status).toBe(200);
@@ -31,9 +31,9 @@ describe('/email API', () => {
         'Content-Type': 'application/json',
       },
       data: {
-        email_name: EMAIL_NAME,
-        email_from: EMAIL_FROM,
-        email_message: EMAIL_MESSAGE,
+        emailName: EMAIL_NAME,
+        emailFrom: EMAIL_FROM,
+        emailMessage: EMAIL_MESSAGE,
       },
     });
     expect(result.data).toBe(
