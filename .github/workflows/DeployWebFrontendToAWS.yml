@@ -37,6 +37,12 @@ jobs:
       - run: |
           yarn --cwd packages/web-frontend build
 
+      # Builds TAR in root directory
+      - name: Build TAR in Root Directory
+        run: |
+          mkdir ./build
+          cp -TR ./packages/web-frontend/build/ build
+
       # Copy file VIA SSH Key to Ubuntu AWS EC2
       - name: Copy file VIA SSH Key to Ubuntu AWS EC2
         uses: appleboy/scp-action@master
@@ -45,8 +51,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
-          source: ${{ secrets.SOURCE }}
-          target: ${{ secrets.TARGET }}
+          source: "./build/*"
+          target: "/srv/www/caidensanders.com/"
+          strip_components: 1
+          overwrite: true
       
 
       
