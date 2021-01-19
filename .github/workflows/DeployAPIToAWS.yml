@@ -44,6 +44,16 @@ jobs:
         run: |
           cp -TR ./packages/api/dist/main.js ./main.js
           
+      # Stop PM2 main.js
+      - name: Stop PM2 main.js
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
+          script: pm2 delete main
+
       # Copy file VIA SSH Key to Ubuntu AWS EC2
       - name: Copy file VIA SSH Key to Ubuntu AWS EC2
         uses: appleboy/scp-action@master
@@ -55,3 +65,13 @@ jobs:
           source: "main.js"
           target: "/home/ubuntu"
           overwrite: true
+          
+        # Start PM2 main.js
+      - name: Start PM2 main.js
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
+          script: pm2 start /home/ubuntu/main.js
