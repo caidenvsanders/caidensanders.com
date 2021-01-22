@@ -28,10 +28,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - run: yarn WebFrontendTestCI
 
       - name: Install Dependencies (from network)
         run: yarn --cwd packages/web-frontend install --check-files --force
+
+      - name: Start WebFrontend Tests
+        run: yarn WebFrontendTestCI
       
       # If all of the tests are successful
       - name: Tests Success
